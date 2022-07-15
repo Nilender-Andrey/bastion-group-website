@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
 const GlobalStyle = createGlobalStyle`
+
 *{
 	padding: 0;
 	margin: 0;
@@ -33,6 +34,12 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+
+body{
+	font-family: 'Fira Sans', sans-serif;
+	background: #E5E5E5;
+}
 `;
 
 export default GlobalStyle;

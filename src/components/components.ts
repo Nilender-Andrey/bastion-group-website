@@ -3,18 +3,20 @@ import styled from 'styled-components/macro';
 export const ButtonStyle = styled.button`
   position: relative;
   width: 100%;
-  max-width: 150px;
-  height: 35px;
-  color: #24173d;
-  font-weight: 700;
-  font-size: 1.3rem;
-  border: 2px solid #24173d;
-  border-radius: 5px;
+
+  height: 42px;
+
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.009em;
+
+  border-radius: 4px;
   transition: 0.15s linear;
-  background-color: #fff;
+  background: #c93e33;
   &:hover {
-    color: #fff;
-    background-color: #24173d;
+    opacity: 0.8;
   }
   &:active {
     transform: scale(0.98);
@@ -22,12 +24,18 @@ export const ButtonStyle = styled.button`
 `;
 
 export const InputStyle = styled.input`
-  height: 35px;
-  min-width: 280px;
-  padding: 10px 20px;
-  border: 2px solid #24173d;
-  border-radius: 5px;
-  font-size: 1.4rem;
+  height: 42px;
+  width: 100%;
+  padding: 12px 48px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.009em;
+  color: #000000;
+
   &:focus {
     outline: 1px solid #24173d;
   }
@@ -73,4 +81,9 @@ export const Flex = styled.div<FlexProps>`
   gap: ${(props) => props.g};
   flex-direction: ${(props) => props.fd};
   margin: ${(props) => props.m};
+`;
+
+export const Container = styled.div`
+  max-width: 1110px;
+  margin: 0 auto;
 `;

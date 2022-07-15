@@ -1,20 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { IProduct } from '../../../types/Product';
 
-interface IProduct {
-  id: string;
-  name: string;
-}
-
-interface IContactsState {
+interface IProductState {
   products: IProduct[];
 }
 
-const initialState: IContactsState = {
+const initialState: IProductState = {
   products: [] as IProduct[],
 };
 
 export const productsSlice = createSlice({
-  name: 'contacts',
+  name: 'products',
   initialState,
   reducers: {
     reset(state) {
