@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import logoImg from './../../assets/img/header__logo.png';
 
 const Logo = () => {
   return (
-    <LogoContainer>
+    <LogoContainer to='/'>
       <LogoImg src={logoImg} />
       <LogoText>Производитель металлических изделий №1</LogoText>
     </LogoContainer>
@@ -13,7 +14,7 @@ const Logo = () => {
 
 export default Logo;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   gap: 15px;
@@ -35,4 +36,5 @@ const LogoText = styled.p`
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.009em;
+  color: #000;
 `;

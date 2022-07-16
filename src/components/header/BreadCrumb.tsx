@@ -46,7 +46,7 @@ const BreadCrumbItem = styled.li`
     content: '';
     width: 6px;
     height: 6px;
-    margin: 0 10px;
+    margin: 0 11px;
 
     background: url(${arrowIcon}) center no-repeat;
   }

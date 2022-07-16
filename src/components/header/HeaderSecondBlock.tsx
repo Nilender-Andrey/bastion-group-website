@@ -5,7 +5,7 @@ import Catalog from './Catalog';
 import Favorites from './Favorites';
 import Logo from './Logo';
 import Search from './Search';
-import ShoppingCart from './ShoppingCart';
+import ShoppingCart from './Shopping-cart';
 
 const HeaderSecondBlock = () => {
   return (

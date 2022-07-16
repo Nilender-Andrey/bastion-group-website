@@ -5,8 +5,8 @@ import styled from 'styled-components/macro';
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <NavbarLink to='product-types'>Типы продуктов</NavbarLink>
-      <NavbarLink to='products'>Продукты</NavbarLink>
+      <NavbarLink to='add-product-types'>Типы продуктов</NavbarLink>
+      <NavbarLink to='add-products'>Продукты</NavbarLink>
     </NavbarContainer>
   );
 };

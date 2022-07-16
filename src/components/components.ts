@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import arrowLeftIcon from '../assets/icon/arrow-left.svg';
 
 export const ButtonStyle = styled.button`
   position: relative;
@@ -23,6 +25,27 @@ export const ButtonStyle = styled.button`
   }
 `;
 
+export const OptionsButton = styled(ButtonStyle)`
+  display: flex;
+  align-items: center;
+
+  padding-left: 18px;
+  height: 56px;
+
+  border-bottom: 1px solid #e6e6e6;
+  background-color: transparent;
+
+  font-size: 18px;
+  color: #000000;
+
+  &:before {
+    content: '';
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+  }
+`;
+
 export const InputStyle = styled.input`
   height: 42px;
   width: 100%;
@@ -41,49 +64,27 @@ export const InputStyle = styled.input`
   }
 `;
 
-type TextProps = {
-  fs?: string;
-  ta?: string;
-  color?: string;
-  m?: string;
-  p?: string;
-  fw?: string;
-  v?: string;
-  lh?: string;
-};
-
-export const Text = styled.p<TextProps>`
-  font-size: ${(props) => props.fs || '1.6rem'};
-  font-weight: ${(props) => props.fw};
-  color: ${(props) => props.color || '#24173d'};
-  text-align: ${(props) => props.ta};
-  margin: ${(props) => props.m};
-  padding: ${(props) => props.p};
-  visibility: ${(props) => props.v};
-  line-height: ${(props) => props.lh}; ;
-`;
-
-type FlexProps = {
-  jc?: string;
-  ai?: string;
-  fw?: string;
-  g?: string;
-  fd?: string;
-
-  m?: string;
-};
-
-export const Flex = styled.div<FlexProps>`
-  display: flex;
-  justify-content: ${(props) => props.jc || 'center'};
-  align-items: ${(props) => props.ai || 'center'};
-  flex-wrap: ${(props) => props.fw};
-  gap: ${(props) => props.g};
-  flex-direction: ${(props) => props.fd};
-  margin: ${(props) => props.m};
-`;
-
 export const Container = styled.div`
+  width: 100%;
   max-width: 1110px;
   margin: 0 auto;
+`;
+
+export const LinkBack = styled(Link)`
+  display: flex;
+
+  width: 26px;
+  height: 26px;
+  margin-right: 20px;
+
+  border-radius: 50%;
+  background: #ffffff url(${arrowLeftIcon}) center no-repeat;
+`;
+
+export const PageTitle = styled.h2`
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  color: #000000;
 `;

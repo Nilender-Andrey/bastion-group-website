@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import localIcon from '../../assets/icon/local.svg';
-import arrowDown from '../../assets/icon/arrow-down.svg';
+import arrowDownIcon from '../../assets/icon/arrow-down.svg';
 
 const City = () => {
   return (
@@ -47,7 +47,7 @@ const CitySelect = styled.select`
 
   appearance: none;
 
-  background: url(${arrowDown}) 86% 80% no-repeat;
+  background: url(${arrowDownIcon}) 86% 80% no-repeat;
 
   cursor: pointer;
 `;
