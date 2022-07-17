@@ -39,5 +39,5 @@ const AppStyle = styled.div`
 
 const MainContainer = styled(Container)`
   flex: 1;
-  margin-bottom: 40px;
+  margin-bottom: 37px;
 `;

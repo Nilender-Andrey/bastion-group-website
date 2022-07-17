@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import ProductCard from './Product-card';
 
 const ProductsList = () => {
-  return <ProductsListContainer></ProductsListContainer>;
+  return (
+    <ProductsListContainer>
+      <ProductCard />
+    </ProductsListContainer>
+  );
 };
 
 export default ProductsList;
@@ -11,5 +16,4 @@ const ProductsListContainer = styled.div`
   flex: 1 1 auto;
 
   height: 100%;
-  padding: 18px 20px 0 20px;
 `;

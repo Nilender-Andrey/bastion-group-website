@@ -15,13 +15,15 @@ export const ButtonStyle = styled.button`
   letter-spacing: 0.009em;
 
   border-radius: 4px;
-  transition: 0.15s linear;
   background: #c93e33;
+
+  transition: all 0.15s linear;
   &:hover {
     opacity: 0.8;
   }
   &:active {
-    transform: scale(0.98);
+    transform: scale(0.98, 0.98);
+    transform-origin: center bottom;
   }
 `;
 
