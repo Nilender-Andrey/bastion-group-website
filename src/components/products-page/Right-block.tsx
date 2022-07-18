@@ -15,5 +15,10 @@ const RightBlock = () => {
 export default RightBlock;
 
 const RightBlockContainer = styled.div`
-  flex: 1;
+  flex: 2 1 auto;
+
+  margin-left: -1px;
+
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
 `;

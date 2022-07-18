@@ -1,31 +1,25 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { LinkBack, PageTitle } from '../components';
+import { PageHeadContainer, PageTitle } from '../components';
 import sortIcon from '../../assets/icon/sort-one.svg';
 import catalogIcon from '../../assets/icon/catalog.svg';
 import listIcon from '../../assets/icon/list-top.svg';
+import BackButton from '../Back-button';
 
 const ProductsPageHead = () => {
   return (
-    <ProductsPageHeadContainer>
-      <LinkBack to='#!'></LinkBack>
+    <PageHeadContainer>
+      <BackButton />
       <PageTitle>Опоры трубопроводов</PageTitle>
       <SortButton>Сначала популярные</SortButton>
       <PreviewContainer>
         <PreviewButtonTable />
       </PreviewContainer>
-    </ProductsPageHeadContainer>
+    </PageHeadContainer>
   );
 };
 
 export default ProductsPageHead;
-
-const ProductsPageHeadContainer = styled.div`
-  display: flex;
-  align-items: center;
-
-  margin-bottom: 30px;
-`;
 
 const SortButton = styled.div`
   display: flex;

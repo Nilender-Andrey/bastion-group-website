@@ -9,4 +9,18 @@ export class Validation {
 
     return num;
   };
+
+  static isEmpty = (value: string) => {
+    return value.length ? '' : 'Поле не заполнено';
+  };
+
+  static isRepeat<T, K extends keyof T>(
+    name: K,
+    value: T[K],
+    arr: T[] | T[],
+  ): string {
+    const result = arr.find((item) => item[name] === value);
+
+    return result ? 'Повторяющееся значение' : '';
+  }
 }

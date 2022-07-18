@@ -23,7 +23,7 @@ const GostListContainer = styled.div`
   gap: 4px;
 
   width: 100%;
-  padding: 17px 15px 14px;
+  padding: 15px 15px 16px;
 
   border-bottom: 1px solid #e6e6e6;
 `;

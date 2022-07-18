@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import arrowLeftIcon from '../assets/icon/arrow-left.svg';
 
 export const ButtonStyle = styled.button`
   position: relative;
@@ -72,21 +70,24 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const LinkBack = styled(Link)`
-  display: flex;
-
-  width: 26px;
-  height: 26px;
-  margin-right: 20px;
-
-  border-radius: 50%;
-  background: #ffffff url(${arrowLeftIcon}) center no-repeat;
-`;
-
 export const PageTitle = styled.h2`
   font-weight: 500;
   font-size: 30px;
   line-height: 36px;
   letter-spacing: 1px;
   color: #000000;
+`;
+
+export const PageHeadContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 30px;
+`;
+
+export const PageContent = styled.div`
+  display: flex;
+
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
 `;

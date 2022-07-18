@@ -20,4 +20,5 @@ const LeftBlockContainer = styled.div`
   height: 100%;
 
   border: 1px solid #e6e6e6;
+  border-bottom: none;
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { PageContent } from '../components';
 import DisplayOn from './Display-on';
 import LeftBlock from './Left-block';
 
@@ -8,32 +9,21 @@ import RightBlock from './Right-block';
 
 const ProductsPageMain = () => {
   return (
-    <ProductsPageMainContainer>
-      <ProductsPageContent>
+    <>
+      <PageContent>
         <LeftBlock />
         <RightBlock />
-      </ProductsPageContent>
+      </PageContent>
 
       <ProductsPageMainNav>
         <DisplayOn />
         <Pagination />
       </ProductsPageMainNav>
-    </ProductsPageMainContainer>
+    </>
   );
 };
 
 export default ProductsPageMain;
-
-const ProductsPageMainContainer = styled.div`
-  height: 100%;
-`;
-
-const ProductsPageContent = styled.div`
-  display: flex;
-
-  background-color: #ffffff;
-  border: 1px solid #e6e6e6;
-`;
 
 const ProductsPageMainNav = styled.div`
   display: flex;

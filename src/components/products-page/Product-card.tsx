@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import productImg from '../../assets/img/product.jpg';
 import { ButtonStyle, OptionsButton } from '../components';
 import ProductCardQuantity from './Product-card-quantity';
@@ -11,50 +11,70 @@ const ProductCard = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isHovering = useHover(ref);
 
-  console.log(isHovering);
-
   return (
-    <ProductCardContainer ref={ref}>
-      {isHovering && <ProductCardFavorites>В избранное</ProductCardFavorites>}
-      <ProductCardDiscounts>
-        <DiscountHit>хит</DiscountHit>
-        <Discount>скидка</Discount>
-        <DiscountSale>акция</DiscountSale>
-      </ProductCardDiscounts>
-      <ProductCardImgContainer>
-        <img src={productImg} alt='' />
-      </ProductCardImgContainer>
+    <ProductCardWrap>
+      <ProductCardContainer ref={ref} isHovering={isHovering}>
+        {isHovering && <ProductCardFavorites>В избранное</ProductCardFavorites>}
+        <ProductCardDiscounts>
+          <DiscountHit>хит</DiscountHit>
+          <Discount>скидка</Discount>
+          <DiscountSale>акция</DiscountSale>
+        </ProductCardDiscounts>
+        <ProductCardImgContainer>
+          <img src={productImg} alt='' />
+        </ProductCardImgContainer>
 
-      <ProductCardCertificate>ГОСТ 14911-82</ProductCardCertificate>
-      <ProductCardName>Опора тавровая хомутовая ТХ</ProductCardName>
+        <ProductCardCertificate>ГОСТ 14911-82</ProductCardCertificate>
+        <ProductCardName>Опора тавровая хомутовая ТХ</ProductCardName>
 
-      <ProductCardWrap>
-        <ProductCardPrice>849.9 руб.</ProductCardPrice>
-        {isHovering && <ProductCardQuantity />}
-      </ProductCardWrap>
-      {isHovering && (
-        <>
-          <ProductCardShoppingCartBtn>
-            <img src={shoppingCartIcon} alt='Корзина' />В корзину
-          </ProductCardShoppingCartBtn>
-          <ProductCardInfoBtn>Подробнее</ProductCardInfoBtn>
-        </>
-      )}
-    </ProductCardContainer>
+        <ProductCardWrapPrice>
+          <ProductCardPrice>849.9 руб.</ProductCardPrice>
+          {isHovering && <ProductCardQuantity />}
+        </ProductCardWrapPrice>
+        {isHovering && (
+          <>
+            <ProductCardShoppingCartBtn>
+              <img src={shoppingCartIcon} alt='Корзина' />В корзину
+            </ProductCardShoppingCartBtn>
+            <ProductCardInfoBtn>Подробнее</ProductCardInfoBtn>
+          </>
+        )}
+      </ProductCardContainer>
+    </ProductCardWrap>
   );
 };
 
 export default ProductCard;
 
-const ProductCardContainer = styled.div`
+const ProductCardWrap = styled.div`
   position: relative;
 
-  flex: 1;
-  padding: 51px 20px 29px 20px;
-  max-width: 280px;
-  margin: -1px -1px -1px -1px;
+  width: 33.453%;
+  height: 441px;
+
+  margin: -1px 0px 0px -1px;
+`;
+
+const ProductCardContainer = styled.div<{ isHovering: boolean }>`
+  ${(props) => {
+    return props.isHovering
+      ? css`
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 10;
+
+          box-shadow: 0px 12px 12px 4px rgba(0, 0, 0, 0.1);
+        `
+      : css`
+          position: relative;
+        `;
+  }}
+
+  padding: 51px 20px 13px 20px;
 
   border: 1px solid #e6e6e6;
+  background-color: #fff;
 
   font-weight: 400;
   font-size: 10px;
@@ -63,6 +83,7 @@ const ProductCardContainer = styled.div`
   letter-spacing: 0.009em;
   color: #000000;
 `;
+
 const ProductCardImgContainer = styled.div`
   width: 179px;
   height: 196px;
@@ -98,12 +119,13 @@ const ProductCardName = styled.div`
   line-height: 22px;
 `;
 
-const ProductCardWrap = styled.div`
+const ProductCardWrapPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   margin-bottom: 19px;
+  margin-bottom: 30px;
 `;
 
 const ProductCardPrice = styled.div`

@@ -39,5 +39,10 @@ const AppStyle = styled.div`
 
 const MainContainer = styled(Container)`
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
   margin-bottom: 37px;
+  max-width: 1109px;
 `;

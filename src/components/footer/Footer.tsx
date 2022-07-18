@@ -13,7 +13,7 @@ const Footer = () => {
 
 export default Footer;
 
-const FooterWrap = styled.header`
+const FooterWrap = styled.footer`
   height: 290px;
   margin-top: 68px;
 
