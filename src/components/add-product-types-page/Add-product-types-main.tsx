@@ -28,7 +28,6 @@ const AddProductTypesMain = () => {
     nameType.setError(nameError);
 
     if (!idError && !nameError) {
-      console.log('Все норм');
       idType.setValue('');
       nameType.setValue('');
       dispatch(

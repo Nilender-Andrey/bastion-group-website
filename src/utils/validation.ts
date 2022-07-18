@@ -1,5 +1,7 @@
 export class Validation {
-  static numbers = (str: string, decimals: number = 2) => {
+  static numbers = (str: string, decimals: number = 3) => {
+    str = Math.abs(+str).toString();
+
     const index = str.indexOf('.') === -1 ? str.length : str.indexOf('.');
     return str.slice(0, index + decimals);
   };
@@ -17,7 +19,7 @@ export class Validation {
   static isRepeat<T, K extends keyof T>(
     name: K,
     value: T[K],
-    arr: T[] | T[],
+    arr: T[],
   ): string {
     const result = arr.find((item) => item[name] === value);
 
