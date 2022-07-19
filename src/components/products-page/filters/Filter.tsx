@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components/macro';
-import helpIcon from '../../assets/icon/help.svg';
-import arrowDownIcon from '../../assets/icon/arrow-down_black.svg';
+import helpIcon from '../../../assets/icon/help.svg';
+import arrowDownIcon from '../../../assets/icon/arrow-down_black.svg';
 
 interface IFilter {
   title: string;

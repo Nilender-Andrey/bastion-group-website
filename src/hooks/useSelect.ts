@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-type UseSelectType = {
+export type UseSelectType = {
   value: string;
   error: string;
   setError: React.Dispatch<React.SetStateAction<string>>;

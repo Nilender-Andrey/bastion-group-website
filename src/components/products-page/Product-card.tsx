@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import styled, { css } from 'styled-components/macro';
 import productImg from '../../assets/img/product.jpg';
 import { ButtonStyle, OptionsButton } from '../components';
@@ -6,8 +6,13 @@ import ProductCardQuantity from './Product-card-quantity';
 import shoppingCartIcon from '../../assets/icon/shopping-cart.svg';
 import starIcon from '../../assets/icon/star_grey.svg';
 import useHover from '../../hooks/useHover';
+import { IProduct } from '../../types/Product';
 
-const ProductCard = () => {
+interface IProductCardProps {
+  product: IProduct;
+}
+
+const ProductCard: FC<IProductCardProps> = ({ product }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isHovering = useHover(ref);
 
@@ -16,19 +21,19 @@ const ProductCard = () => {
       <ProductCardContainer ref={ref} isHovering={isHovering}>
         {isHovering && <ProductCardFavorites>В избранное</ProductCardFavorites>}
         <ProductCardDiscounts>
-          <DiscountHit>хит</DiscountHit>
-          <Discount>скидка</Discount>
-          <DiscountSale>акция</DiscountSale>
+          {product.isHit && <DiscountHit>хит</DiscountHit>}
+          {product.isAction && <Discount>скидка</Discount>}
+          {/*  <DiscountSale>акция</DiscountSale> */}
         </ProductCardDiscounts>
         <ProductCardImgContainer>
-          <img src={productImg} alt='' />
+          <img src={product.imgPath || productImg} alt={product.name} />
         </ProductCardImgContainer>
 
-        <ProductCardCertificate>ГОСТ 14911-82</ProductCardCertificate>
-        <ProductCardName>Опора тавровая хомутовая ТХ</ProductCardName>
+        <ProductCardCertificate>{product.gost}</ProductCardCertificate>
+        <ProductCardName>{product.name}</ProductCardName>
 
         <ProductCardWrapPrice>
-          <ProductCardPrice>849.9 руб.</ProductCardPrice>
+          <ProductCardPrice>{product.price} руб.</ProductCardPrice>
           {isHovering && <ProductCardQuantity />}
         </ProductCardWrapPrice>
         {isHovering && (
@@ -64,10 +69,13 @@ const ProductCardContainer = styled.div<{ isHovering: boolean }>`
           left: 0;
           z-index: 10;
 
+          width: 100%;
+
           box-shadow: 0px 12px 12px 4px rgba(0, 0, 0, 0.1);
         `
       : css`
           position: relative;
+          height: 441px;
         `;
   }}
 
@@ -162,10 +170,10 @@ const DiscountHit = styled(Discount)`
   background-color: #fd7272;
 `;
 
-const DiscountSale = styled(Discount)`
+/* const DiscountSale = styled(Discount)`
   width: 57px;
   background-color: #27ae60;
-`;
+`; */
 
 const ProductCardShoppingCartBtn = styled(ButtonStyle)`
   margin-bottom: 16px;

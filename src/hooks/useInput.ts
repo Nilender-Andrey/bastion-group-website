@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-type UseInputType = {
+export type UseInputType = {
   value: string;
   error: string;
   setError: React.Dispatch<React.SetStateAction<string>>;

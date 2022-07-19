@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import Categories from './Categories';
-import Filters from './Filters';
+import Filters from './filters/Filters';
 
 const LeftBlock = () => {
   return (

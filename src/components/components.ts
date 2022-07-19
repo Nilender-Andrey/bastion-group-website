@@ -91,3 +91,19 @@ export const PageContent = styled.div`
   background-color: #ffffff;
   border: 1px solid #e6e6e6;
 `;
+
+export const ProductLabel = styled.label`
+  display: block;
+
+  max-width: 480px;
+  margin: 20px auto;
+  text-align: left;
+
+  p {
+    padding-left: 10px;
+    height: 14px;
+
+    font-weight: 700;
+    color: #c93e33;
+  }
+`;

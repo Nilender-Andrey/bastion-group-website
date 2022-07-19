@@ -9,6 +9,7 @@ import useSelect from '../../hooks/useSelect';
 import { productsSlice } from '../../store/reducers/products/products-slice';
 import useFileInput from '../../hooks/useFileInput';
 import checkLetter from '../../utils/check-letter';
+import ProductTypeSelect from '../Product-type-select';
 
 enum Offer {
   Hit = 'о',
@@ -94,23 +95,9 @@ const AddProductMain = () => {
           <p>{name.error}</p>
         </AddProductLabel>
 
-        <AddProductLabel>
-          <AddProductSelect as='select' {...type}>
-            {!productType.length && (
-              <option value=''>Нет ни одного типа продукта</option>
-            )}
-            {productType.length && (
-              <option value=''>Выберите тип продукта</option>
-            )}
-            {productType.length &&
-              productType.map((item) => (
-                <option value={item.nameType} key={item.idType}>
-                  {item.nameType}
-                </option>
-              ))}
-          </AddProductSelect>
+        <ProductTypeSelect productType={productType} type={type}>
           <p>{type.error}</p>
-        </AddProductLabel>
+        </ProductTypeSelect>
 
         <AddProductLabel>
           <AddProductInput
@@ -166,11 +153,6 @@ const AddProductLabel = styled.label`
 
 const AddProductInput = styled(InputStyle)`
   padding: 12px;
-  margin-bottom: 5px;
-`;
-
-const AddProductSelect = styled(InputStyle)`
-  padding: 10px;
   margin-bottom: 5px;
 `;
 

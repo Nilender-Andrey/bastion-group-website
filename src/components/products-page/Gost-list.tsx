@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/macro';
+
 import { ButtonStyle } from '../components';
 
-const GostList = () => {
+interface IGostListProps {
+  gosts: string[];
+  gostsSelected: string[];
+  clickHandler: (value: string) => void;
+}
+
+const GostList: FC<IGostListProps> = ({
+  gosts,
+  gostsSelected,
+  clickHandler,
+}) => {
   return (
     <GostListContainer>
-      <GostListButton isActive={true}>ГОСТ 14911-82</GostListButton>
-      <GostListButton>ОСТ 36-146-88</GostListButton>
-      <GostListButton>НТС 65-06</GostListButton>
-      <GostListButton>ОСТ 36-146-88</GostListButton>
-      <GostListButton>НТС 65-06</GostListButton>
-      <GostListButton>НТС 65-06</GostListButton>
+      {Array.from(gosts).map((gost) => (
+        <GostListButton
+          onClick={() => clickHandler(gost)}
+          isActive={gostsSelected.includes(gost) ? true : false}
+          key={gost}>
+          {gost}
+        </GostListButton>
+      ))}
     </GostListContainer>
   );
 };
