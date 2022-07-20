@@ -1,41 +1,43 @@
-import React, { useState } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/macro';
-import { Validation } from '../../utils/validation';
-import { ButtonStyle } from '../components';
+import { ButtonStyle } from './components';
 
-const ProductCardQuantity = () => {
-  const [value, setValue] = useState(1);
+interface IQuantityProps {
+  quantity: number;
+  changeQuantity: (newQuantity: number) => void;
+}
 
+const Quantity: FC<IQuantityProps> = ({ quantity, changeQuantity }) => {
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = Math.round(+event.target.value);
-
-    setValue(Validation.quantity(newValue));
+    changeQuantity(+event.target.value);
   };
 
   const increment = () => {
-    setValue((e) => ++e);
+    changeQuantity(++quantity);
   };
   const decrement = () => {
-    setValue((e) => Validation.quantity(--e));
+    if (quantity <= 1) return;
+    changeQuantity(--quantity);
   };
 
   return (
-    <ProductCardQuantityContainer>
-      <ProductCardQuantityBtn onClick={increment}>+</ProductCardQuantityBtn>
-      <ProductCardQuantityInput
+    <QuantityContainer>
+      <QuantityBtn onClick={increment}>+</QuantityBtn>
+      <QuantityInput
         type='number'
-        value={value}
+        value={quantity}
         onChange={onChangeHandler}
         min='1'
+        step='1'
       />
-      <ProductCardQuantityBtn onClick={decrement}>-</ProductCardQuantityBtn>
-    </ProductCardQuantityContainer>
+      <QuantityBtn onClick={decrement}>-</QuantityBtn>
+    </QuantityContainer>
   );
 };
 
-export default ProductCardQuantity;
+export default Quantity;
 
-const ProductCardQuantityContainer = styled.div`
+const QuantityContainer = styled.div`
   display: flex;
 
   width: 108px;
@@ -44,7 +46,7 @@ const ProductCardQuantityContainer = styled.div`
   overflow: hidden;
 `;
 
-const ProductCardQuantityBtn = styled(ButtonStyle)`
+const QuantityBtn = styled(ButtonStyle)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +65,7 @@ const ProductCardQuantityBtn = styled(ButtonStyle)`
   }
 `;
 
-const ProductCardQuantityInput = styled.input`
+const QuantityInput = styled.input`
   width: 52px;
 
   border-top: 1px solid #e6e6e6;

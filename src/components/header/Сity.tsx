@@ -47,7 +47,7 @@ const CitySelect = styled.select`
 
   appearance: none;
 
-  background: url(${arrowDownIcon}) 86% 80% no-repeat;
+  background: url(${arrowDownIcon}) 86% 40% no-repeat;
 
   cursor: pointer;
 `;

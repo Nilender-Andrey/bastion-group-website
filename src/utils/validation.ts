@@ -9,7 +9,7 @@ export class Validation {
   static quantity = (num: number) => {
     if (num < 1) return 1;
 
-    return num;
+    return Math.round(num);
   };
 
   static isEmpty = (value: string) => {

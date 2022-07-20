@@ -12,3 +12,9 @@ export interface IProductType {
   idType: string;
   nameType: string;
 }
+
+export interface IShoppingCartItem {
+  product: IProduct;
+  quantity: number;
+  sum?: string;
+}

@@ -40,6 +40,18 @@ const SliderPrice: FC<ISliderPriceProps> = ({
         value={[+minPriceFilter, +maxPriceFilter]}
         defaultValue={[+min, +max]}
         onChange={onChangeHandler}
+        trackStyle={{
+          background: '#C93E33',
+        }}
+        handleStyle={{
+          top: '2px',
+          width: '19px',
+          height: '19px',
+          background: '#C93E33',
+          border: '4px solid #fff',
+          opacity: '1',
+        }}
+        activeDotStyle={{}}
       />
     </SliderPriceContainer>
   );

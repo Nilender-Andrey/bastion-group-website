@@ -1,18 +1,26 @@
 import React, { FC } from 'react';
 import styled from 'styled-components/macro';
-import { IProduct } from '../../types/Product';
+import { IProduct, IShoppingCartItem } from '../../types/Product';
 import ProductCard from './Product-card';
 
 interface IProductsListProps {
   products: IProduct[];
+  AddToShoppingCart: (value: IShoppingCartItem) => void;
 }
 
-const ProductsList: FC<IProductsListProps> = ({ products }) => {
+const ProductsList: FC<IProductsListProps> = ({
+  products,
+  AddToShoppingCart,
+}) => {
   return (
     <ProductsListContainer>
       {products.length ? (
         products.map((product) => (
-          <ProductCard product={product} key={product.id} />
+          <ProductCard
+            product={product}
+            key={product.id}
+            AddToShoppingCart={AddToShoppingCart}
+          />
         ))
       ) : (
         <ProductsListMessage>Пока ничего нет</ProductsListMessage>
@@ -23,7 +31,7 @@ const ProductsList: FC<IProductsListProps> = ({ products }) => {
 
 export default ProductsList;
 
-const ProductsListContainer = styled.div`
+const ProductsListContainer = styled.ul`
   flex: 1 1 auto;
 
   display: flex;

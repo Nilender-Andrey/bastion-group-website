@@ -23,5 +23,5 @@ const HeaderFirstBlockContainer = styled(Container)`
   display: flex;
   align-items: center;
 
-  padding: 14px 0;
+  padding: 14px 0 12px;
 `;

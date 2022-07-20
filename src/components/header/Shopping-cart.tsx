@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import shoppingCartIcon from '../../assets/icon/shopping.svg';
 
-const ShoppingCart: FC = () => {
+interface ShoppingCartProps {
+  quantity: number;
+}
+
+const ShoppingCart: FC<ShoppingCartProps> = ({ quantity }) => {
   return (
     <ShoppingCartContainer to='shopping-cart'>
-      <ShoppingCartQuantity>2</ShoppingCartQuantity>
+      {!!quantity && <ShoppingCartQuantity>{quantity}</ShoppingCartQuantity>}
       <ShoppingCartIcon />
       <ShoppingCartTitle>Корзина</ShoppingCartTitle>
     </ShoppingCartContainer>

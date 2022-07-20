@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { productsSlice } from '../../store/reducers/products/products-slice';
+import { shoppingCartSlice } from '../../store/reducers/shopping-cart/shopping-cart-slice';
 import { useAppDispatch, useAppSelector } from '../../store/store';
+import { IShoppingCartItem } from '../../types/Product';
 import GostList from './Gost-list';
 import ProductsList from './Products-list';
 
 const RightBlock = () => {
   const dispatch = useAppDispatch();
   const { select } = productsSlice.actions;
+  const { addProduct } = shoppingCartSlice.actions;
   const {
     products,
     gostsSelected,
@@ -37,6 +40,10 @@ const RightBlock = () => {
     dispatch(select(value));
   };
 
+  const AddToShoppingCart = (value: IShoppingCartItem) => {
+    dispatch(addProduct(value));
+  };
+
   return (
     <RightBlockContainer>
       <GostList
@@ -44,7 +51,10 @@ const RightBlock = () => {
         gosts={gosts}
         clickHandler={gostClickHandler}
       />
-      <ProductsList products={showProducts} />
+      <ProductsList
+        products={showProducts}
+        AddToShoppingCart={AddToShoppingCart}
+      />
     </RightBlockContainer>
   );
 };

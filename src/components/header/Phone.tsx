@@ -32,7 +32,7 @@ const PhoneContainer = styled.div`
 const PhoneLink = styled.a`
   font-weight: 700;
   font-size: 1.143rem;
-  line-height: 19px;
+  line-height: 21px;
   letter-spacing: 1px;
 
   color: #000000;

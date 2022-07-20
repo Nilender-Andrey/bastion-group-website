@@ -1,20 +1,37 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import styled, { css } from 'styled-components/macro';
 import productImg from '../../assets/img/product.jpg';
-import { ButtonStyle, OptionsButton } from '../components';
-import ProductCardQuantity from './Product-card-quantity';
+import {
+  ButtonStyle,
+  OptionsButton,
+  ProductCardCertificateStyle,
+  ProductCardNameStyle,
+  ProductCardPrice,
+} from '../components';
 import shoppingCartIcon from '../../assets/icon/shopping-cart.svg';
 import starIcon from '../../assets/icon/star_grey.svg';
 import useHover from '../../hooks/useHover';
-import { IProduct } from '../../types/Product';
+import { IProduct, IShoppingCartItem } from '../../types/Product';
+import Quantity from '../Quantity';
+import { Validation } from '../../utils/validation';
 
 interface IProductCardProps {
   product: IProduct;
+  AddToShoppingCart: (value: IShoppingCartItem) => void;
 }
 
-const ProductCard: FC<IProductCardProps> = ({ product }) => {
+const ProductCard: FC<IProductCardProps> = ({ product, AddToShoppingCart }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [quantity, setQuantity] = useState(1);
   const isHovering = useHover(ref);
+
+  const clickHandler = () => {
+    AddToShoppingCart({ product, quantity });
+  };
+
+  const changeQuantity = (newQuantity: number) => {
+    setQuantity(Validation.quantity(newQuantity));
+  };
 
   return (
     <ProductCardWrap>
@@ -29,16 +46,20 @@ const ProductCard: FC<IProductCardProps> = ({ product }) => {
           <img src={product.imgPath || productImg} alt={product.name} />
         </ProductCardImgContainer>
 
-        <ProductCardCertificate>{product.gost}</ProductCardCertificate>
-        <ProductCardName>{product.name}</ProductCardName>
+        <ProductCardCertificateStyle>
+          {product.gost}
+        </ProductCardCertificateStyle>
+        <ProductCardNameStyle>{product.name}</ProductCardNameStyle>
 
         <ProductCardWrapPrice>
           <ProductCardPrice>{product.price} руб.</ProductCardPrice>
-          {isHovering && <ProductCardQuantity />}
+          {isHovering && (
+            <Quantity changeQuantity={changeQuantity} quantity={quantity} />
+          )}
         </ProductCardWrapPrice>
         {isHovering && (
           <>
-            <ProductCardShoppingCartBtn>
+            <ProductCardShoppingCartBtn onClick={clickHandler}>
               <img src={shoppingCartIcon} alt='Корзина' />В корзину
             </ProductCardShoppingCartBtn>
             <ProductCardInfoBtn>Подробнее</ProductCardInfoBtn>
@@ -51,7 +72,7 @@ const ProductCard: FC<IProductCardProps> = ({ product }) => {
 
 export default ProductCard;
 
-const ProductCardWrap = styled.div`
+const ProductCardWrap = styled.li`
   position: relative;
 
   width: 33.453%;
@@ -103,29 +124,6 @@ const ProductCardImgContainer = styled.div`
     object-fit: contain;
   }
 `;
-const ProductCardCertificate = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: fit-content;
-  min-width: 83px;
-  height: 20px;
-  margin-bottom: 25px;
-
-  background: #c93e331a;
-
-  border-radius: 2px;
-
-  color: #c93e33;
-`;
-const ProductCardName = styled.div`
-  margin-bottom: 9px;
-
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-`;
 
 const ProductCardWrapPrice = styled.div`
   display: flex;
@@ -134,12 +132,6 @@ const ProductCardWrapPrice = styled.div`
 
   margin-bottom: 19px;
   margin-bottom: 30px;
-`;
-
-const ProductCardPrice = styled.div`
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 18px;
 `;
 
 const ProductCardDiscounts = styled.div`

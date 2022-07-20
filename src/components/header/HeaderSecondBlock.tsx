@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { useAppSelector } from '../../store/store';
 import { Container } from '../components';
 import Catalog from './Catalog';
 import Favorites from './Favorites';
@@ -8,6 +9,8 @@ import Search from './Search';
 import ShoppingCart from './Shopping-cart';
 
 const HeaderSecondBlock = () => {
+  const { items } = useAppSelector((state) => state.shoppingCartSlice);
+
   return (
     <HeaderSecondBlockWrapper>
       <HeaderSecondBlockContainer>
@@ -15,7 +18,7 @@ const HeaderSecondBlock = () => {
         <Catalog />
         <Search />
         <Favorites />
-        <ShoppingCart />
+        <ShoppingCart quantity={items.length} />
       </HeaderSecondBlockContainer>
     </HeaderSecondBlockWrapper>
   );
