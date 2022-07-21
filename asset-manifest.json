@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "./static/css/main.063d24c1.css",
+    "main.js": "./static/js/main.bf246115.js",
+    "static/media/footer.png": "./static/media/footer.5ed0c6e2d82cfd353976.png",
+    "static/media/product.jpg": "./static/media/product.db03cc821298620af316.jpg",
+    "static/media/offer.svg": "./static/media/offer.ff49d759c04445eb5ddab933cc637054.svg",
+    "static/media/shopping-cart.svg": "./static/media/shopping-cart.abe5c1fd9eb2c098d136df7bbb86fb17.svg",
+    "static/media/setting-config.svg": "./static/media/setting-config.004499767e2164ee2b63db4978ea2e40.svg",
+    "static/media/help.svg": "./static/media/help.bdd90a5da4843e64b0b5376d37bf2905.svg",
+    "static/media/shopping.svg": "./static/media/shopping.483207bd2f2947df50069cfc588a386b.svg",
+    "static/media/basket.svg": "./static/media/basket.364748d2ad9aefb564899bb02162ab04.svg",
+    "static/media/local.svg": "./static/media/local.b2254a9ba92241d3d9364ed189096e50.svg",
+    "static/media/categories.svg": "./static/media/categories.0438f7d039d092f39ae791afae9c00d1.svg",
+    "static/media/phone.svg": "./static/media/phone.70c2e7830e77466a77edde6624a5dd5d.svg",
+    "static/media/catalog.svg": "./static/media/catalog.a221402cb7ce636f2e727f89e360aac4.svg",
+    "static/media/list-top.svg": "./static/media/list-top.9cee07d88f17590787aa49694a49dacf.svg",
+    "static/media/star_grey.svg": "./static/media/star_grey.0ed005af3366e354d29dadb98b790a27.svg",
+    "static/media/star.svg": "./static/media/star.70492953a6108505b32fe82566e21cae.svg",
+    "static/media/sort-one.svg": "./static/media/sort-one.b4d170825642e843de6dc28c73a0d00b.svg",
+    "static/media/e-mail.svg": "./static/media/e-mail.3dac3d669b4c3c1d806e3dbd869932f8.svg",
+    "static/media/warning.svg": "./static/media/warning.6484a23dfe2fe8ceb1b182f546ea0d22.svg",
+    "static/media/briefcase.svg": "./static/media/briefcase.ae78979e07b6f99f99b4c3c41b829d61.svg",
+    "static/media/mail.svg": "./static/media/mail.7e2aa8017205c47410ea81cef79cd37a.svg",
+    "static/media/search.svg": "./static/media/search.38f2adff3c5889de6b3743ac36dc4683.svg",
+    "static/media/delete.svg": "./static/media/delete.2994b57cfc7befe0115b21a84d5fc908.svg",
+    "static/media/enter.svg": "./static/media/enter.b4d40f3b2fa3011aa5078bc6c65f5acc.svg",
+    "static/media/user.svg": "./static/media/user.dcd7cc720f55a4f9f5b63d434ea630ce.svg",
+    "index.html": "./index.html",
+    "static/media/arrow-right__pagination.svg": "./static/media/arrow-right__pagination.aefa7257cad35835081e5eb2503e88c1.svg",
+    "static/media/arrow-left.svg": "./static/media/arrow-left.3dc405fc5008504a2c410b2c1b63a45b.svg",
+    "static/media/arrow-left_pagination.svg": "./static/media/arrow-left_pagination.7853fb8d942c159684ce55a26809cdaf.svg",
+    "static/media/arrow-down.svg": "./static/media/arrow-down.b6fcd0ffba00c75c1da072eae4f55d2c.svg",
+    "static/media/arrow-down_black.svg": "./static/media/arrow-down_black.8e3a3f74c0f5c037951083e07e7755f6.svg",
+    "static/media/chevron.svg": "./static/media/chevron.e22162696ae1ca7f41c671f3854f7c5b.svg",
+    "main.063d24c1.css.map": "./static/css/main.063d24c1.css.map",
+    "main.bf246115.js.map": "./static/js/main.bf246115.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.063d24c1.css",
+    "static/js/main.bf246115.js"
+  ]
+}
