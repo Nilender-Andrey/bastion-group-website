@@ -60,7 +60,7 @@ const ProductCard: FC<IProductCardProps> = ({ product, AddToShoppingCart }) => {
         {isHovering && (
           <>
             <ProductCardShoppingCartBtn onClick={clickHandler}>
-              <img src={shoppingCartIcon} alt='Корзина' />В корзину
+              <img src={shoppingCartIcon} alt='' />В корзину
             </ProductCardShoppingCartBtn>
             <ProductCardInfoBtn>Подробнее</ProductCardInfoBtn>
           </>

@@ -37,7 +37,7 @@ const ShoppingCartCard: FC<IShoppingCartCard> = ({
   return (
     <ShoppingCartCardContainer>
       <ShoppingCartCardImageWrap>
-        <img src={productImg} alt='' />
+        <img src={imgPath || productImg} alt='' />
       </ShoppingCartCardImageWrap>
 
       <div>
