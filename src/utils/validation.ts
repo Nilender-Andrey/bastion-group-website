@@ -25,4 +25,27 @@ export class Validation {
 
     return result ? 'Повторяющееся значение' : '';
   }
+
+  static email = (value: string) => {
+    if (
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        String(value).toLowerCase(),
+      )
+    ) {
+      return '';
+    } else {
+      return 'Не корректный Email';
+    }
+  };
+
+  static phone = (value: string) => {
+    return value.length ? '' : 'Не корректный Email';
+  };
+
+  static minLength = (value: string, minLength = 2) => {
+    return value.length < minLength ? `Минимум ${minLength} символа` : '';
+  };
+  static maxLength = (value: string, minLength = 35) => {
+    return value.length > minLength ? `Максимум ${minLength} символов` : '';
+  };
 }

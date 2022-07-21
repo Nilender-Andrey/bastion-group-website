@@ -56,6 +56,10 @@ export const shoppingCartSlice = createSlice({
         (item) => item.product.id !== action.payload.id,
       );
     },
+
+    clear(state) {
+      state.items = [];
+    },
   },
 });
 

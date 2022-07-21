@@ -15,4 +15,6 @@ const ShoppingCartMain = () => {
 
 export default ShoppingCartMain;
 
-const ShoppingCartContent = styled(PageContent)``;
+const ShoppingCartContent = styled(PageContent)`
+  max-width: 1113px;
+`;

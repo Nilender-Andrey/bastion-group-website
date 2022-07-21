@@ -19,10 +19,14 @@ const LeftBlock = () => {
 export default LeftBlock;
 
 const LeftBlockContainer = styled.div`
+  position: relative;
+
   flex: 1 1 auto;
-  height: 100%;
+  min-height: 100%;
+  padding-bottom: 84px;
 
   border: 1px solid #e6e6e6;
+  border-bottom: none;
 `;
 
 const Info = styled.p`
